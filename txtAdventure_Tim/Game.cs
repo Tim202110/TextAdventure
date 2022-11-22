@@ -97,7 +97,11 @@ namespace Zuul
 				case "quit":
 					wantToQuit = true;
 					break;
-			}
+				case "look";
+					GetLongDescription();
+					break;
+
+            }
 
 			return wantToQuit;
 		}
