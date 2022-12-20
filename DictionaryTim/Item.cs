@@ -5,12 +5,14 @@ namespace DictionaryVoornaam
 	public class Item
 	{
 		// property
+		public int Weight { get; }
 		public string Description { get; }
 
 		// constructor
-		public Item(string description)
+		public Item(int weight, string description)
 		{
-			this.Description = description;
+			Weight = weight;
+			Description = description;
 		}
 
 		// methods

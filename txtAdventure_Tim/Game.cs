@@ -68,8 +68,9 @@ namespace Zuul
 			Console.WriteLine("Zuul is a new, incredibly boring adventure game.");
 			Console.WriteLine("Type 'help' if you need help.");
 			Console.WriteLine();
-			Console.WriteLine(player.CurrentRoom.GetLongDescription());
-		}
+			Console.WriteLine("\n" + player.CurrentRoom.GetLongDescription() + "\n");
+            Console.WriteLine("leef je nog? : " + player.IsAlive() + "\n");
+        }
 
 		/**
 		 * Given a command, process (that is: execute) the command.
@@ -99,13 +100,17 @@ namespace Zuul
 					wantToQuit = true;
 					break;
 				case "look":
-					Console.WriteLine(player.CurrentRoom.GetLongDescription());
+					Console.WriteLine(player.CurrentRoom.GetLongDescription() + "\n");
 				break;
             }
 			if (player.IsAlive())
 			{
+				wantToQuit = false;
+			}
+			else
+			{
 				wantToQuit = true;
-			} 
+			}
 
 			return wantToQuit;
 		}
@@ -151,11 +156,9 @@ namespace Zuul
 			{
 				player.CurrentRoom = nextRoom;
 				player.Damage(20);
-                Console.WriteLine();
-                Console.WriteLine(player.CurrentRoom.GetLongDescription());
-				Console.WriteLine();
-				Console.WriteLine("Are you dead?" player.IsAlive());
-                Console.WriteLine();
+				Console.WriteLine("\n");
+                Console.WriteLine(player.CurrentRoom.GetLongDescription() + "\n");
+				Console.WriteLine("leef je nog? : " + player.IsAlive() + "\n");
             }
 		}
 	}

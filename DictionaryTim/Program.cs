@@ -25,7 +25,7 @@ namespace DictionaryVoornaam
             // Bewijs met behulp van code dat er een entry is met de Key "potion". Laat de description zien van dat Item.
             if (itemDictionary.ContainsKey("potion"))
             {
-                Console.WriteLine(itemDictionary["potion"].Description);
+                Console.WriteLine(itemDictionary["potion"].Description + "\n");
             }
 
             // Is er een Item "nailgun"? Zo ja, wat is de description? Zo nee, zeg beleefd dat je het Item niet kunt vinden.
@@ -35,7 +35,7 @@ namespace DictionaryVoornaam
 			}
 			else
 			{
-				Console.WriteLine("nailgun bestaat niet");
+				Console.WriteLine("nailgun bestaat niet. \n\n");
 			}
 
 
@@ -45,7 +45,7 @@ namespace DictionaryVoornaam
             // Console.WriteLine alle items. Laat zowel de Key zien, als de description van elk Item (Value).
 			foreach (KeyValuePair<string, Item> item in itemDictionary)
 			{
-				Console.WriteLine("Key = {0}, Description = {1}", item.Key, item.Value.Description);
+				Console.WriteLine("Key = {0}, Description = {1}", item.Key, item.Value.Description + "\n");
 			}
 
 
@@ -54,7 +54,7 @@ namespace DictionaryVoornaam
 
 
 			// Laat nogmaals zien hoeveel Items de itemDictionary bevat (gebruik Count)
-			Console.WriteLine(itemDictionary.Count);
+			Console.WriteLine("\n" + itemDictionary.Count);
 
 
         }
