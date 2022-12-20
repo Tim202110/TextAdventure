@@ -1,0 +1,15 @@
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\obj\Debug\net6.0\DictionaryVoornaam.csproj.AssemblyReference.cache
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\obj\Debug\net6.0\DictionaryVoornaam.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\obj\Debug\net6.0\DictionaryVoornaam.AssemblyInfoInputs.cache
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\obj\Debug\net6.0\DictionaryVoornaam.AssemblyInfo.cs
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\obj\Debug\net6.0\DictionaryVoornaam.csproj.CoreCompileInputs.cache
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\bin\Debug\net6.0\DictionaryVoornaam.exe
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\bin\Debug\net6.0\DictionaryVoornaam.deps.json
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\bin\Debug\net6.0\DictionaryVoornaam.runtimeconfig.json
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\bin\Debug\net6.0\DictionaryVoornaam.dll
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\bin\Debug\net6.0\DictionaryVoornaam.pdb
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\obj\Debug\net6.0\DictionaryVoornaam.dll
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\obj\Debug\net6.0\refint\DictionaryVoornaam.dll
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\obj\Debug\net6.0\DictionaryVoornaam.pdb
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\obj\Debug\net6.0\DictionaryVoornaam.genruntimeconfig.cache
+C:\Users\bored\OneDrive\Documenten\GitHub\TextAdventure\DictionaryTim\obj\Debug\net6.0\ref\DictionaryVoornaam.dll
