@@ -18,12 +18,12 @@ namespace Zuul
             // check the Weight of the Item!
             // put Item in the items Collection
             // return true/false for success/failure
-            if (TotalWeight() + item.Weight < maxWeight)
+            if (TotalWeight() + item.Weight > maxWeight)
             {
                 items.Add(itemName, item);
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
         public Item Get(string itemName)
         {

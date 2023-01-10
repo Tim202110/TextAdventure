@@ -11,13 +11,13 @@ namespace Zuul
 
 			Dictionary<string, Item> itemDictionary = new Dictionary<string, Item>();
 
-			itemDictionary.Add("hammer", new Item(10, "A heavy hammer"));
-			itemDictionary.Add("axe", new Item(8, "A sharp axe"));
-			itemDictionary.Add("potion", new Item(1, "A bottle labeled 'drink me'"));
-			itemDictionary.Add("medkit", new Item(1, "A medkit"));
+			itemDictionary.Add("hammer", new Item(15, "A heavy hammer"));
+			itemDictionary.Add("axe", new Item(10, "A sharp axe"));
+			itemDictionary.Add("potion", new Item(2, "A bottle labeled 'drink me'"));
+			itemDictionary.Add("medkit", new Item(4, "A medkit"));
 
             // Voeg een Item toe (Add) met de Key "pill" en description "A bitter pill to swallow"
-            itemDictionary.Add("Pill", new Item(1,"A better pill to swallow"));
+            itemDictionary.Add("Pill", new Item(2,"A better pill to swallow"));
 
 			// Verwijder (Remove) de entry "medkit" uit de dictionary
 			itemDictionary.Remove("medkit");
