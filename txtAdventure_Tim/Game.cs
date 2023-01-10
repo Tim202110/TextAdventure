@@ -169,5 +169,15 @@ namespace Zuul
 				Console.WriteLine("leef je nog? : " + player.IsAlive() + "\n");
             }
 		}
+
+		private void take(Command command)
+		{
+
+		}
+		
+		private void Drop(Command command)
+		{
+
+		}
 	}
 }

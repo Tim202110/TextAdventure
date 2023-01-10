@@ -50,5 +50,10 @@ namespace Zuul
             // return true/false for success/failure
             return false;
         }
+
+		public string Use(string itemName)
+		{
+			//TODO implement
+		}
     }
 }
