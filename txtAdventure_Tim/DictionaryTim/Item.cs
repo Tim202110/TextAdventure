@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DictionaryVoornaam
+namespace Zuul
 {
 	public class Item
 	{

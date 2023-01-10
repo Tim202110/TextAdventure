@@ -99,9 +99,17 @@ namespace Zuul
 				case "quit":
 					wantToQuit = true;
 					break;
+			  /*case "status":
+					???
+					break;
+
+				case "grab":
+			        ???
+					break;
+			  */
 				case "look":
 					Console.WriteLine(player.CurrentRoom.GetLongDescription() + "\n");
-				break;
+					break;
             }
 			if (player.IsAlive())
 			{

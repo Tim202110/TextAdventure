@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DictionaryVoornaam
+namespace Zuul
 {
-	class Program
+	class Programs
 	{
 		static void Main(string[] args)
 		{
@@ -11,13 +11,13 @@ namespace DictionaryVoornaam
 
 			Dictionary<string, Item> itemDictionary = new Dictionary<string, Item>();
 
-			itemDictionary.Add("hammer", new Item("A heavy hammer"));
-			itemDictionary.Add("axe", new Item("A sharp axe"));
-			itemDictionary.Add("potion", new Item("A bottle labeled 'drink me'"));
-			itemDictionary.Add("medkit", new Item("A medkit"));
+			itemDictionary.Add("hammer", new Item(10, "A heavy hammer"));
+			itemDictionary.Add("axe", new Item(8, "A sharp axe"));
+			itemDictionary.Add("potion", new Item(1, "A bottle labeled 'drink me'"));
+			itemDictionary.Add("medkit", new Item(1, "A medkit"));
 
             // Voeg een Item toe (Add) met de Key "pill" en description "A bitter pill to swallow"
-            itemDictionary.Add("Pill", new Item("A better pill to swallow"));
+            itemDictionary.Add("Pill", new Item(1,"A better pill to swallow"));
 
 			// Verwijder (Remove) de entry "medkit" uit de dictionary
 			itemDictionary.Remove("medkit");
