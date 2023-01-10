@@ -15,25 +15,26 @@ namespace Zuul
         }
         public bool Put(string itemName, Item item)
         {
-            // check the Weight of the Item!
-            // put Item in the items Collection
-            // return true/false for success/failure
+            // check if your inventory has enough space for the item to be added.
             if (TotalWeight() + item.Weight > maxWeight)
             {
+                // put Item in the items Collection
                 items.Add(itemName, item);
+                // return true for success
                 return false;
             }
+            // return false for failure
             return true;
         }
         public Item Get(string itemName)
         {
-            // find Item in items Collection
-            // remove Item from items Collection if found
-            // return Item
-            if(items.ContainsKey(itemName))
+            if (items.ContainsKey(itemName))
             {
+                // find Item in items Collection
                 Item item = items[itemName];
+                // remove Item from items Collection if found
                 items.Remove(itemName);
+                // return Item
                 return item;
             }
             return null;
@@ -41,7 +42,10 @@ namespace Zuul
 
         private int TotalWeight()
         {
+            //total starts at 0
             int total = 0;
+
+            //foreach to see how much weight you carry in your inventory.
             foreach(string itemName in items.Keys)
             {
                 total = maxWeight + items(itemName);
