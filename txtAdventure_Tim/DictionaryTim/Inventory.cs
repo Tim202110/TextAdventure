@@ -18,7 +18,7 @@ namespace Zuul
             // check the Weight of the Item!
             // put Item in the items Collection
             // return true/false for success/failure
-            if (maxWeight + item.Weight < maxWeight)
+            if (TotalWeight() + item.Weight < maxWeight)
             {
                 items.Add(itemName, item);
                 return true;
@@ -30,11 +30,23 @@ namespace Zuul
             // find Item in items Collection
             // remove Item from items Collection if found
             // return Item
-            if()
+            if(items.ContainsKey(itemName))
             {
+                Item item = items[itemName];
                 items.Remove(itemName);
+                return item;
             }
             return null;
+        }
+
+        private int TotalWeight()
+        {
+            int total = 0;
+            foreach(string itemName in items.Keys)
+            {
+                total = maxWeight + items(itemName);
+            }
+            return total;
         }
     }
 }
