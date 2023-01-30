@@ -4,7 +4,7 @@ namespace Zuul
 	{
 		private string commandWord;
 		private string secondWord;
-		private string thirdWord;
+		private string ThirdWord;
 
 		/**
 		 * Create a command object. First and second word must be supplied, but
@@ -13,10 +13,10 @@ namespace Zuul
 		 */
 		public Command(string first, string second, string third)
 		{
-			thirdWord = first;
-			commandWord = second;
-			secondWord = third;
-		}
+			commandWord = first;
+			secondWord = second;
+            ThirdWord = third;
+        }
 
 		/**
 		 * Return the command word (the first word) of this command. If the
@@ -51,5 +51,12 @@ namespace Zuul
 		{
 			return (secondWord != null);
 		}
-	}
+		
+		/*
+		 * create third word boolean
+		 */
+		public bool hasThirdWord()
+		{
+			return (ThirdWord != null);
+		}
 }

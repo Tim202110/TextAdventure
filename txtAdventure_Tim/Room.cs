@@ -9,15 +9,21 @@ namespace Zuul
 		private string description;
 		private Dictionary<string, Room> exits; // stores exits of this room.
 
-		/**
+        public Inventory Chest
+        {
+            get { return chest; }
+        }
+
+        /**
 		 * Create a room described "description". Initially, it has no exits.
 		 * "description" is something like "in a kitchen" or "in an open court
 		 * yard".
 		 */
-		public Room(string desc)
+        public Room(string desc)
 		{
 			description = desc;
 			exits = new Dictionary<string, Room>();
+			//a room can handle a big inventory...
 			chest = new Inventory(999999);
 		}
 
@@ -86,11 +92,6 @@ namespace Zuul
 			}
 
 			return str;
-		}
-
-		public Inventory Chest
-		{
-			get { return Chest; }
 		}
 	}
 }

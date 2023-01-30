@@ -18,11 +18,11 @@ namespace Zuul
             // check if your inventory has enough space for the item to be added.
             if (TotalWeight() + item.Weight > maxWeight)
             {
-                // put Item in the items Collection
-                items.Add(itemName, item);
                 // return true for success
                 return false;
             }
+            // put Item in the items Collection
+            items.Add(itemName, item);
             // return false for failure
             return true;
         }
@@ -51,6 +51,14 @@ namespace Zuul
                 total = maxWeight + items(itemName);
             }
             return total;
+        }
+
+        public void Show()
+        {
+            foreach(string itemName in items.Keys)
+            {
+                Console.WriteLine("item name: " + itemName + "\ndescription: " + items.description + "\nWeight: (" + items.weight + " kg)");
+            }
         }
     }
 }

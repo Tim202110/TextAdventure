@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace Zuul
 {
@@ -38,6 +39,9 @@ namespace Zuul
 			office.AddExit("west", lab);
 
 			player.CurrentRoom = outside;  // start game outside
+
+			outside.Chest.Put("Axe", Item(20, "An sharp axe"));
+			theatre.Chest.Put("Potion", Item(5, "An better potion"));
 		}
 
 		/**
@@ -99,14 +103,14 @@ namespace Zuul
 				case "quit":
 					wantToQuit = true;
 					break;
-			  /*case "status":
-					???
+			  case "status":
+					inventory.Show();
 					break;
 
-				case "grab":
+				/*case "grab":
 			        ???
-					break;
-			  */
+					break;*/
+			  
 				case "look":
 					Console.WriteLine(player.CurrentRoom.GetLongDescription() + "\n");
 					break;
