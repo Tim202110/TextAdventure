@@ -8,6 +8,7 @@ namespace Zuul
 		private Parser parser;
 		private Player player;
 		private Room room;
+		private Inventory inventory;
 		public Game()
 		{
 			parser = new Parser();
@@ -103,7 +104,7 @@ namespace Zuul
 				case "quit":
 					wantToQuit = true;
 					break;
-			  case "status":
+			  case "inventory":
 					inventory.Show();
 					break;
 
@@ -176,12 +177,22 @@ namespace Zuul
 
 		private void take(Command command)
 		{
-
-		}
+			if(!command.HasSecondWord())
+			{
+				Console.WriteLine("Take what?");
+				return;
+			}
+            string ItemNamed = command.GetSecondWord();
+        }
 		
 		private void Drop(Command command)
 		{
-
-		}
+            if (!command.HasSecondWord())
+            {
+                Console.WriteLine("Drop what?");
+                return;
+            }
+			
+        }
 	}
 }

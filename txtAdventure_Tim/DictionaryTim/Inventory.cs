@@ -6,6 +6,8 @@ namespace Zuul
 {
     public class Inventory
     {
+        Item item;
+
         private int maxWeight;
         private Dictionary<string, Item> items;
         public Inventory(int maxWeight)
@@ -57,7 +59,7 @@ namespace Zuul
         {
             foreach(string itemName in items.Keys)
             {
-                Console.WriteLine("item name: " + itemName + "\ndescription: " + items.description + "\nWeight: (" + items.weight + " kg)");
+                Console.WriteLine("item name: " + itemName + "\ndescription: " + item.Description + "\nWeight: (" + item.Weight + " kg)");
             }
         }
     }

@@ -12,7 +12,7 @@ namespace Zuul
 			CurrentRoom = null;
 			health = 100;
 			// 25kg is pretty heavy to carry around all day.
-			inventory = new Inventory(50);
+			inventory = new Inventory(25);
 		}
 
 		public int Damage(int amount)
@@ -35,19 +35,39 @@ namespace Zuul
         public bool TakeFromChest(string itemName)
         {
             // remove the Item from the Room
+			//CurrentRoom.Chest.Get(itemName);
+
             // put it in your inventory
+            //inventory.Put(itemName);
+
             // inspect returned values
+			// 
+
             // communicate to the user what's happening
+			//
+
             // return true/false for success/failure
+			//
+
             return false;
         }
         public bool DropToChest(string itemName)
         {
             // remove Item from your inventory.
+
+
             // Add the Item to the Room
+
+
             // inspect returned values
+
+
             // communicate to the user what's happening
+
+
             // return true/false for success/failure
+
+
             return false;
         }
 
