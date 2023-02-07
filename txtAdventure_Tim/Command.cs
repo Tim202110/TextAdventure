@@ -4,7 +4,7 @@ namespace Zuul
 	{
 		private string commandWord;
 		private string secondWord;
-		private string ThirdWord;
+		private string thirdWord;
 
 		/**
 		 * Create a command object. First and second word must be supplied, but
@@ -15,7 +15,7 @@ namespace Zuul
 		{
 			commandWord = first;
 			secondWord = second;
-			ThirdWord = third;
+			thirdWord = third;
 		}
 
 		/**
@@ -57,7 +57,7 @@ namespace Zuul
 		 */
 		public bool hasThirdWord()
 		{
-			return (ThirdWord != null);
+			return (thirdWord != null);
 		}
 
 	}
