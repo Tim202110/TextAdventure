@@ -14,12 +14,14 @@ namespace Zuul
 		{
 			validCommands = new List<string>();
 
+			validCommands.Add("Inventory");
 			validCommands.Add("go");
 			validCommands.Add("quit");
 			validCommands.Add("help");
 			validCommands.Add("look");
 			validCommands.Add("Status");
-			validCommands.Add("get");
+			validCommands.Add("Take");
+			validCommands.Add("Drop");
 		}
 
 		/**

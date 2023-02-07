@@ -15,8 +15,8 @@ namespace Zuul
 		{
 			commandWord = first;
 			secondWord = second;
-            ThirdWord = third;
-        }
+			ThirdWord = third;
+		}
 
 		/**
 		 * Return the command word (the first word) of this command. If the
@@ -51,7 +51,7 @@ namespace Zuul
 		{
 			return (secondWord != null);
 		}
-		
+
 		/*
 		 * create third word boolean
 		 */
@@ -59,4 +59,6 @@ namespace Zuul
 		{
 			return (ThirdWord != null);
 		}
+
+	}
 }

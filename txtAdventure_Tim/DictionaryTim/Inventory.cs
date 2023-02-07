@@ -6,7 +6,7 @@ namespace Zuul
 {
     public class Inventory
     {
-        Item item;
+        public Item item;
 
         private int maxWeight;
         private Dictionary<string, Item> items;
@@ -23,8 +23,10 @@ namespace Zuul
                 // return true for success
                 return false;
             }
+
             // put Item in the items Collection
             items.Add(itemName, item);
+
             // return false for failure
             return true;
         }
@@ -34,8 +36,10 @@ namespace Zuul
             {
                 // find Item in items Collection
                 Item item = items[itemName];
+
                 // remove Item from items Collection if found
                 items.Remove(itemName);
+
                 // return Item
                 return item;
             }
@@ -50,7 +54,7 @@ namespace Zuul
             //foreach to see how much weight you carry in your inventory.
             foreach(string itemName in items.Keys)
             {
-                total = maxWeight + items(itemName);
+                total = total + item.Weight;
             }
             return total;
         }

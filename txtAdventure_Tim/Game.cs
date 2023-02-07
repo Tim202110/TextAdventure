@@ -41,8 +41,8 @@ namespace Zuul
 
 			player.CurrentRoom = outside;  // start game outside
 
-			outside.Chest.Put("Axe", Item(20, "An sharp axe"));
-			theatre.Chest.Put("Potion", Item(5, "An better potion"));
+			outside.Chest.Put("Axe", new Item(20, "An sharp axe"));
+			theatre.Chest.Put("Potion", new Item(5, "An better potion"));
 		}
 
 		/**
@@ -104,17 +104,18 @@ namespace Zuul
 				case "quit":
 					wantToQuit = true;
 					break;
-			  case "inventory":
+			    case "Inventory":
 					inventory.Show();
 					break;
-
-				/*case "grab":
-			        ???
-					break;*/
-			  
 				case "look":
 					Console.WriteLine(player.CurrentRoom.GetLongDescription() + "\n");
 					break;
+                case "Take":
+                    player.TakeFromChest("");
+                    break;
+                case "Drop":
+                    player.DropToChest("");
+                    break;
             }
 			if (player.IsAlive())
 			{
