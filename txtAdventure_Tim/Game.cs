@@ -104,18 +104,18 @@ namespace Zuul
 				case "quit":
 					wantToQuit = true;
 					break;
-			    case "Inventory":
-					inventory.Show();
+				case "Inventory":
+					player.inventory.Show();
 					break;
 				case "look":
 					Console.WriteLine(player.CurrentRoom.GetLongDescription() + "\n");
 					break;
-                case "Take":
-                    player.TakeFromChest("");
-                    break;
-                case "Drop":
-                    player.DropToChest("");
-                    break;
+				case "Take":
+					player.TakeFromChest("");
+					break;
+				case "Drop":
+					player.DropToChest("");
+					break;
             }
 			if (player.IsAlive())
 			{

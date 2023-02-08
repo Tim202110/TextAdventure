@@ -59,13 +59,12 @@ namespace Zuul
             return total;
         }
 
-        public string Show()
+        public void Show()
         {
             foreach(string itemName in items.Keys)
             {
                 Console.WriteLine("item name: " + itemName + "\ndescription: " + item.Description + "\nWeight: (" + item.Weight + " kg)");
             }
-            return Show();
         }
     }
 }

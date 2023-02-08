@@ -5,7 +5,7 @@ namespace Zuul
 {
     public class Player
 	{
-		private Inventory inventory;
+		public Inventory inventory;
 		private int health;
 	    public Room CurrentRoom { get; set; }
 		public Player()

@@ -54,8 +54,6 @@ namespace Zuul
 			string str = "You are ";
 			str += description;
 			str += ".\n";
-			str += "this is in the chest.\n";
-			str += Chest.Show();
 			str += GetExitString();
 			return str;
 		}
