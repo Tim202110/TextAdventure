@@ -46,7 +46,7 @@ namespace Zuul
 			player.CurrentRoom = outside;  // start game outside
 
 			outside.Chest.Put("Axe", new Item(20, "An sharp axe"));
-			theatre.Chest.Put("Potion", new Item(5, "An better potion"));
+			theatre.Chest.Put("Potion", new Item(5, "A healing Potion"));
 			pub.Chest.Put("Revolver", new Item(20, "A cowboy revolver."));
 			storage.Chest.Put("medkit", new Item(5, "A medkit to heal your wounds."));
 		}
@@ -128,6 +128,9 @@ namespace Zuul
 				case "drop":
 					Drop(command);
 					break;
+				/*case "use":
+					???
+					break;*/
             }
 
 			return wantToQuit;

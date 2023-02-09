@@ -80,9 +80,36 @@ namespace Zuul
 
         }
 
-		/*public string Use(string itemName)
+		public string Use(string itemName)
 		{
-			//TODO implement
-		}*/
+            string str;
+            if (itemName == "medkit")
+            {
+                Heal(50);
+                str = "You have used medkit.\nYou healed 50 points.";
+                return str;
+            }
+            if (itemName == "potion")
+            {
+                Heal(10);
+                str = "You have used Potion.\nYou healed 10 points.";
+                return str;
+            }
+            if (itemName == "Axe")
+            {
+                str = "You have used your axe.\nSLASH!\n";
+                return str;
+            }
+            if (itemName == "Revolver")
+            {
+                str = "You have used your revolver.\nPEW!\n";
+                return str;
+            }
+            else
+            {
+                str = "Use what?";
+                return str;
+            }
+		}
     }
 }
