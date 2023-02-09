@@ -1,5 +1,5 @@
 ﻿using System;
-using System.ComponentModel;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Zuul
 {
@@ -24,6 +24,7 @@ namespace Zuul
 			Room pub = new Room("in the campus pub");
 			Room lab = new Room("in a computing lab");
 			Room office = new Room("in the computing admin office");
+			Room storage = new Room("in the storage room");
 
 			// initialise room exits
 			outside.AddExit("east", theatre);
@@ -36,13 +37,18 @@ namespace Zuul
 
 			lab.AddExit("north", outside);
 			lab.AddExit("east", office);
+			lab.AddExit("south", storage);
 
 			office.AddExit("west", lab);
+			
+			storage.AddExit("north", lab);
 
 			player.CurrentRoom = outside;  // start game outside
 
 			outside.Chest.Put("Axe", new Item(20, "An sharp axe"));
 			theatre.Chest.Put("Potion", new Item(5, "An better potion"));
+			pub.Chest.Put("Revolver", new Item(20, "A cowboy revolver."));
+			storage.Chest.Put("medkit", new Item(5, "A medkit to heal your wounds."));
 		}
 
 		/**
@@ -57,9 +63,16 @@ namespace Zuul
 			bool finished = false;
 			while (!finished)
 			{
-				Command command = parser.GetCommand();
-				finished = ProcessCommand(command);
-			}
+				if (!player.IsAlive())
+				{
+					Console.WriteLine("\nYou died.\n");
+					finished = true;
+					continue;
+                }
+                Command command = parser.GetCommand();
+                finished = ProcessCommand(command);
+
+            }
 			Console.WriteLine("Thank you for playing.");
 		}
 
@@ -74,7 +87,6 @@ namespace Zuul
 			Console.WriteLine("Type 'help' if you need help.");
 			Console.WriteLine();
 			Console.WriteLine("\n" + player.CurrentRoom.GetLongDescription() + "\n");
-            Console.WriteLine("leef je nog? : " + player.IsAlive() + "\n");
         }
 
 		/**
@@ -104,27 +116,19 @@ namespace Zuul
 				case "quit":
 					wantToQuit = true;
 					break;
-				case "Inventory":
-					player.inventory.Show();
+				case "inventory":
+					Console.WriteLine("Items in your inventory:\n" + player.inventory.Show());
 					break;
 				case "look":
 					Console.WriteLine(player.CurrentRoom.GetLongDescription() + "\n");
 					break;
-				case "Take":
-					player.TakeFromChest("");
+				case "take":
+					take(command);
 					break;
-				case "Drop":
-					player.DropToChest("");
+				case "drop":
+					Drop(command);
 					break;
             }
-			if (player.IsAlive())
-			{
-				wantToQuit = false;
-			}
-			else
-			{
-				wantToQuit = true;
-			}
 
 			return wantToQuit;
 		}
@@ -169,10 +173,10 @@ namespace Zuul
 			else
 			{
 				player.CurrentRoom = nextRoom;
-				player.Damage(20);
+				player.Damage(5);
 				Console.WriteLine("\n");
                 Console.WriteLine(player.CurrentRoom.GetLongDescription() + "\n");
-				Console.WriteLine("leef je nog? : " + player.IsAlive() + "\n");
+				Console.WriteLine("Your current health: " + player.Health + "\n");
             }
 		}
 
@@ -184,6 +188,7 @@ namespace Zuul
 				return;
 			}
             string ItemNamed = command.GetSecondWord();
+			player.TakeFromChest(ItemNamed);
         }
 		
 		private void Drop(Command command)
@@ -193,6 +198,9 @@ namespace Zuul
                 Console.WriteLine("Drop what?");
                 return;
             }
+
+			string ItemNamed = command.GetSecondWord();
+			player.DropToChest(ItemNamed);
 			
         }
 	}

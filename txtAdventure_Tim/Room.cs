@@ -4,11 +4,13 @@ namespace Zuul
 {
 	public class Room
 	{
-		private Inventory chest;
 
 		private string description;
 		private Dictionary<string, Room> exits; // stores exits of this room.
 
+		// field
+        private Inventory chest;
+		// property
         public Inventory Chest
         {
             get { return chest; }
@@ -21,10 +23,11 @@ namespace Zuul
 		 */
         public Room(string desc)
 		{
-			description = desc;
+            //a room can handle a big inventory...
+            chest = new Inventory(999999);
+
+            description = desc;
 			exits = new Dictionary<string, Room>();
-			//a room can handle a big inventory...
-			chest = new Inventory(999999);
 		}
 
 		/**
@@ -55,6 +58,9 @@ namespace Zuul
 			str += description;
 			str += ".\n";
 			str += GetExitString();
+			str += "\n";
+			str += "Items in the room:\n";
+			str += chest.Show();
 			return str;
 		}
 

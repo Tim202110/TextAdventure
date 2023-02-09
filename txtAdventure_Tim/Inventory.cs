@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
+using System.Text;
+using System.Threading.Tasks;
+
 
 namespace Zuul
 {
@@ -8,17 +13,17 @@ namespace Zuul
     {
         public Item item;
 
-        private int maxWeight;
+        private int MaxWeight;
         private Dictionary<string, Item> items;
         public Inventory(int maxWeight)
         {
-            this.maxWeight = maxWeight;
+            this.MaxWeight = maxWeight;
             this.items = new Dictionary<string, Item> ();
         }
         public bool Put(string itemName, Item item)
         {
             // check if your inventory has enough space for the item to be added.
-            if (TotalWeight() + item.Weight > maxWeight)
+            if (TotalWeight() + item.Weight > MaxWeight)
             {
                 // return true for success
                 return false;
@@ -54,17 +59,28 @@ namespace Zuul
             //foreach to see how much weight you carry in your inventory.
             foreach(string itemName in items.Keys)
             {
-                total = total + item.Weight;
+                total = total + items[itemName].Weight;
             }
             return total;
         }
 
-        public void Show()
+        public string Show()
         {
-            foreach(string itemName in items.Keys)
+            string str = "";
+            if (!IsEmpty())
             {
-                Console.WriteLine("item name: " + itemName + "\ndescription: " + item.Description + "\nWeight: (" + item.Weight + " kg)");
+                foreach (string itemName in items.Keys)
+                {
+                    Item item = items[itemName];
+                    str += " - " + itemName + ": " + item.Description + " (" + item.Weight + "kg)\n";
+                }
             }
+            return str;
+        }
+
+        public bool IsEmpty()
+        {
+            return items.Count == 0;
         }
     }
 }
