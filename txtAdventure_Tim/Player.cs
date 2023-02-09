@@ -82,34 +82,30 @@ namespace Zuul
 
 		public string Use(string itemName)
 		{
-            string str;
-            if (itemName == "medkit")
+            string str = "";
+            if (itemName == "Medkit")
             {
                 Heal(50);
                 str = "You have used medkit.\nYou healed 50 points.";
-                return str;
             }
-            if (itemName == "potion")
+            if (itemName == "Potion")
             {
-                Heal(10);
-                str = "You have used Potion.\nYou healed 10 points.";
-                return str;
+                Damage(10);
+                str = "You have used the suspicious Potion.\nYou got damaged! -10hp;";
             }
             if (itemName == "Axe")
             {
                 str = "You have used your axe.\nSLASH!\n";
-                return str;
             }
             if (itemName == "Revolver")
             {
                 str = "You have used your revolver.\nPEW!\n";
-                return str;
             }
             else
             {
-                str = "Use what?";
-                return str;
+                str = "You don't have this item";
             }
+            return str;
 		}
     }
 }

@@ -48,7 +48,7 @@ namespace Zuul
 			outside.Chest.Put("Axe", new Item(20, "An sharp axe"));
 			theatre.Chest.Put("Potion", new Item(5, "A healing Potion"));
 			pub.Chest.Put("Revolver", new Item(20, "A cowboy revolver."));
-			storage.Chest.Put("medkit", new Item(5, "A medkit to heal your wounds."));
+			storage.Chest.Put("Medkit", new Item(5, "A medkit to heal your wounds."));
 		}
 
 		/**
@@ -128,9 +128,9 @@ namespace Zuul
 				case "drop":
 					Drop(command);
 					break;
-				/*case "use":
-					???
-					break;*/
+				case "use":
+					Use(command);
+					break;
             }
 
 			return wantToQuit;
@@ -206,5 +206,17 @@ namespace Zuul
 			player.DropToChest(ItemNamed);
 			
         }
+
+		private void Use(Command command)
+		{
+			if (!command.HasSecondWord())
+			{
+				Console.WriteLine("Use what?");
+				return;
+			}
+
+			string itemNamed = command.GetSecondWord();
+			player.Use(itemNamed);
+		}
 	}
 }
